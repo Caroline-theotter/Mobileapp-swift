@@ -17,29 +17,29 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack {
+            MapView()
+                .ignoresSafeArea(edges: .top)
+                .frame(height: 350)
+           durban_spot()
+                .offset(y:-100)
+                .padding(.bottom, -100)
+                
+            VStack(alignment: .leading){
+                Text("Addington")
+                    .font(.title)
+                    .foregroundColor(Color.blue)
+                    .multilineTextAlignment(.center)
+                
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+            
+            Text("Durban")
+            Spacer()
         }
+//        .padding()
+    
+        Spacer()
+        
     }
 
     private func addItem() {
@@ -83,6 +83,9 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        Group {
+            ContentView().preferredColorScheme(.light).previewInterfaceOrientation(.portrait).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            ContentView().preferredColorScheme(.light).previewInterfaceOrientation(.portrait).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
     }
 }

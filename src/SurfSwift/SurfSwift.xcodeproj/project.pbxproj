@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5BA7FFD275E4F5000540F50 /* durban-spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA7FFC275E4F5000540F50 /* durban-spot.swift */; };
+		E5BA7FFF275E510F00540F50 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA7FFE275E510F00540F50 /* MapView.swift */; };
 		E5C663A8275E46B600E79970 /* SurfSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663A7275E46B600E79970 /* SurfSwiftApp.swift */; };
 		E5C663AA275E46B600E79970 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663A9275E46B600E79970 /* ContentView.swift */; };
 		E5C663AC275E46BC00E79970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C663AB275E46BC00E79970 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5BA7FFC275E4F5000540F50 /* durban-spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "durban-spot.swift"; sourceTree = "<group>"; };
+		E5BA7FFE275E510F00540F50 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E5C663A4275E46B600E79970 /* SurfSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C663A7275E46B600E79970 /* SurfSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfSwiftApp.swift; sourceTree = "<group>"; };
 		E5C663A9275E46B600E79970 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			children = (
 				E5C663A7275E46B600E79970 /* SurfSwiftApp.swift */,
 				E5C663A9275E46B600E79970 /* ContentView.swift */,
+				E5BA7FFC275E4F5000540F50 /* durban-spot.swift */,
+				E5BA7FFE275E510F00540F50 /* MapView.swift */,
 				E5C663AB275E46BC00E79970 /* Assets.xcassets */,
 				E5C663B0275E46BC00E79970 /* Persistence.swift */,
 				E5C663B2275E46BC00E79970 /* SurfSwift.xcdatamodeld */,
@@ -264,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5C663B1275E46BC00E79970 /* Persistence.swift in Sources */,
+				E5BA7FFF275E510F00540F50 /* MapView.swift in Sources */,
 				E5C663AA275E46B600E79970 /* ContentView.swift in Sources */,
+				E5BA7FFD275E4F5000540F50 /* durban-spot.swift in Sources */,
 				E5C663A8275E46B600E79970 /* SurfSwiftApp.swift in Sources */,
 				E5C663B4275E46BC00E79970 /* SurfSwift.xcdatamodeld in Sources */,
 			);
