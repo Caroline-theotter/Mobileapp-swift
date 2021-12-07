@@ -12,7 +12,7 @@ struct SurfSpotList: View {
         NavigationView{
         List(DataManager.data) { surfspot in
             NavigationLink{
-                SurfSpotDetails()
+                SurfSpotDetails(surfspot: surfspot)
             } label:{
            surfSpotRow(surfspot: surfspot)
             }

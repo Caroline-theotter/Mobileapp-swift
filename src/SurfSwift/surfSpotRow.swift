@@ -34,4 +34,5 @@ struct surfSpotRow_Previews: PreviewProvider {
     }
         .previewLayout(.fixed(width: 300, height: 70))
     }
+    
 }
