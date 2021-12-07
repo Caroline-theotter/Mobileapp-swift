@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E56A79B7275F5E0C00E9ADF2 /* modelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A79B6275F5E0C00E9ADF2 /* modelData.swift */; };
+		E56A79BC275F605A00E9ADF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663B0275E46BC00E79970 /* Persistence.swift */; };
+		E56A79BE275F609A00E9ADF2 /* surfSpotRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A79BD275F609A00E9ADF2 /* surfSpotRow.swift */; };
+		E56A79C0275F6E9F00E9ADF2 /* surfSpotInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A79BF275F6E9F00E9ADF2 /* surfSpotInfo.swift */; };
+		E56A79C2275F701500E9ADF2 /* SurfSpotList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A79C1275F701500E9ADF2 /* SurfSpotList.swift */; };
 		E5BA7FFD275E4F5000540F50 /* durban-spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA7FFC275E4F5000540F50 /* durban-spot.swift */; };
 		E5BA7FFF275E510F00540F50 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA7FFE275E510F00540F50 /* MapView.swift */; };
 		E5BA8004275E5DB400540F50 /* surfSpotsData.json in Resources */ = {isa = PBXBuildFile; fileRef = E5BA8003275E5DB400540F50 /* surfSpotsData.json */; };
@@ -18,7 +23,6 @@
 		E5C663AA275E46B600E79970 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663A9275E46B600E79970 /* ContentView.swift */; };
 		E5C663AC275E46BC00E79970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C663AB275E46BC00E79970 /* Assets.xcassets */; };
 		E5C663AF275E46BC00E79970 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C663AE275E46BC00E79970 /* Preview Assets.xcassets */; };
-		E5C663B1275E46BC00E79970 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663B0275E46BC00E79970 /* Persistence.swift */; };
 		E5C663B4275E46BC00E79970 /* SurfSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5C663B2275E46BC00E79970 /* SurfSwift.xcdatamodeld */; };
 		E5C663BE275E46BC00E79970 /* SurfSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663BD275E46BC00E79970 /* SurfSwiftTests.swift */; };
 		E5C663C8275E46BC00E79970 /* SurfSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663C7275E46BC00E79970 /* SurfSwiftUITests.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E56A79B6275F5E0C00E9ADF2 /* modelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelData.swift; sourceTree = "<group>"; };
+		E56A79BD275F609A00E9ADF2 /* surfSpotRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surfSpotRow.swift; sourceTree = SOURCE_ROOT; };
+		E56A79BF275F6E9F00E9ADF2 /* surfSpotInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surfSpotInfo.swift; sourceTree = "<group>"; };
+		E56A79C1275F701500E9ADF2 /* SurfSpotList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfSpotList.swift; sourceTree = "<group>"; };
 		E5BA7FFC275E4F5000540F50 /* durban-spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "durban-spot.swift"; sourceTree = "<group>"; };
 		E5BA7FFE275E510F00540F50 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E5BA8003275E5DB400540F50 /* surfSpotsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = surfSpotsData.json; sourceTree = "<group>"; };
@@ -89,6 +97,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E56A79B8275F5FD700E9ADF2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E56A79BD275F609A00E9ADF2 /* surfSpotRow.swift */,
+				E5BA7FFE275E510F00540F50 /* MapView.swift */,
+				E5BA7FFC275E4F5000540F50 /* durban-spot.swift */,
+				E5C663A9275E46B600E79970 /* ContentView.swift */,
+				E56A79C1275F701500E9ADF2 /* SurfSpotList.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		E56A79BA275F602400E9ADF2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E56A79BF275F6E9F00E9ADF2 /* surfSpotInfo.swift */,
+				E56A79B6275F5E0C00E9ADF2 /* modelData.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		E5BA8002275E5CDE00540F50 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				E5BA8005275E693400540F50 /* whiteSandsBeach.jpg */,
-				E5BA800B275E6A4000540F50 /* hellsMouth.jpg */,
 				E5BA8009275E6A2100540F50 /* supertubos.jpg */,
 				E5BA8007275E69FF00540F50 /* addington.jpg */,
+				E5BA800B275E6A4000540F50 /* hellsMouth.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -132,13 +161,12 @@
 		E5C663A6275E46B600E79970 /* SurfSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E5C663B0275E46BC00E79970 /* Persistence.swift */,
+				E56A79BA275F602400E9ADF2 /* model */,
 				E5BA8002275E5CDE00540F50 /* resources */,
 				E5C663A7275E46B600E79970 /* SurfSwiftApp.swift */,
-				E5C663A9275E46B600E79970 /* ContentView.swift */,
-				E5BA7FFC275E4F5000540F50 /* durban-spot.swift */,
-				E5BA7FFE275E510F00540F50 /* MapView.swift */,
+				E56A79B8275F5FD700E9ADF2 /* views */,
 				E5C663AB275E46BC00E79970 /* Assets.xcassets */,
-				E5C663B0275E46BC00E79970 /* Persistence.swift */,
 				E5C663B2275E46BC00E79970 /* SurfSwift.xcdatamodeld */,
 				E5C663AD275E46BC00E79970 /* Preview Content */,
 			);
@@ -305,11 +333,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5C663B1275E46BC00E79970 /* Persistence.swift in Sources */,
 				E5BA7FFF275E510F00540F50 /* MapView.swift in Sources */,
+				E56A79C0275F6E9F00E9ADF2 /* surfSpotInfo.swift in Sources */,
+				E56A79BC275F605A00E9ADF2 /* Persistence.swift in Sources */,
+				E56A79BE275F609A00E9ADF2 /* surfSpotRow.swift in Sources */,
 				E5C663AA275E46B600E79970 /* ContentView.swift in Sources */,
 				E5BA7FFD275E4F5000540F50 /* durban-spot.swift in Sources */,
 				E5C663A8275E46B600E79970 /* SurfSwiftApp.swift in Sources */,
+				E56A79C2275F701500E9ADF2 /* SurfSpotList.swift in Sources */,
+				E56A79B7275F5E0C00E9ADF2 /* modelData.swift in Sources */,
 				E5C663B4275E46BC00E79970 /* SurfSwift.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

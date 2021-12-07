@@ -13,8 +13,9 @@ struct SurfSwiftApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SurfSpotList()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+               
         }
     }
 }

@@ -18,7 +18,7 @@
     {
         "name": "Supertubos",
         "city": "Peniche",
-        "country": "Portugal"
+        "country": "Portugal",
         "difficulty": "Intermediate",
         "TypeOfWave": "Beach break",
         "id": 1002,
@@ -34,7 +34,7 @@
     {
         "name": "Hell's mouth",
         "city": "Ty newydd",
-        "country": "Wales"
+        "country": "Wales",
         "difficulty": "Intermediate",
         "TypeOfWave": "Beach break",
         "id": 1002,
@@ -44,21 +44,23 @@
             "longitude": 52.8118750858,
             "latitude": -4.5487061385
         },
-        "description": "Il s’agit d’un long banc de plage qui s’étend sur près de 40 kilomètres. Un spot de surf immanquable adapté aux non-initiés comme aux spécialistes."
+        "description": "Il s’agit d’un long banc de plage qui s’étend sur près de 40 kilomètres. Un spot de surf immanquable adapté aux non-initiés comme aux spécialistes.",
+        "imageName": "durban-spot"
     },
     {
         "name": "White sand spot",
         "city": "Gommoah Fetteh",
-        "country": "Ghana"
+        "country": "Ghana",
         "difficulty": "Advanced",
         "TypeOfWave": "Point break",
         "id": 1002,
         "isFeatured": false,
         "isFavorite": false,
         "coordinates": {
-            "longitude":  -.4738,
+            "longitude":  -0.4738,
             "latitude":  5.42
         },
-        "description": "Jeffreys Bay, en Afrique du Sud, offre des « supertubes » s’étendant sur près de 300 mètres. Il s’agit également d’un des spots les plus connus du monde, en raison de l’attaque d’un requin blanc en 2015 contre le champion Mick Fanning. Heureusement, depuis, des mesures de sécurité ont été prises."
+        "description": "Jeffreys Bay, en Afrique du Sud, offre des « supertubes » s’étendant sur près de 300 mètres. Il s’agit également d’un des spots les plus connus du monde, en raison de l’attaque d’un requin blanc en 2015 contre le champion Mick Fanning. Heureusement, depuis, des mesures de sécurité ont été prises.",
+        "imageName": "durban-spot"
     }
 ]
