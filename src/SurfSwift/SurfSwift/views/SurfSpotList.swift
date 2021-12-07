@@ -9,8 +9,15 @@ import SwiftUI
 
 struct SurfSpotList: View {
     var body: some View {
+        NavigationView{
         List(DataManager.data) { surfspot in
+            NavigationLink{
+                SurfSpotDetails()
+            } label:{
            surfSpotRow(surfspot: surfspot)
+            }
+        }
+        .navigationTitle("Surf Spots")
         }
     }
 }
