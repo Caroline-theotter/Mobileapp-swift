@@ -28,6 +28,9 @@ struct surfSpotRow_Previews: PreviewProvider {
         Group{
             surfSpotRow(surfspot: DataManager.data[0])
             surfSpotRow(surfspot: DataManager.data[1])
+            surfSpotRow(surfspot: DataManager.data[2])
+            surfSpotRow(surfspot: DataManager.data[3])
+            
     }
         .previewLayout(.fixed(width: 300, height: 70))
     }
