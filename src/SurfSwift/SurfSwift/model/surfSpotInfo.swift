@@ -11,12 +11,13 @@ import CoreLocation
 
 struct Records: Codable{
     var spots: [Spot]
+    
     enum CodingKeys: String, CodingKey {
             case spots = "records"
     }
 }
 
-struct Spot: Codable{
+struct Spot: Codable, Identifiable{
     var fields: Fields
     var id: String
 }
@@ -39,10 +40,8 @@ struct Fields: Codable{
 
 struct PhotoData: Codable{
     var url: String
-    var idPhoto: String
 
     enum CodingKeys: String, CodingKey {
-        case idPhoto = "id"
         case url = "url"
     }
 }

@@ -15,11 +15,6 @@
 		E56A79C4275F783A00E9ADF2 /* SurfSpotDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A79C3275F783A00E9ADF2 /* SurfSpotDetails.swift */; };
 		E5BA7FFD275E4F5000540F50 /* durban-spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA7FFC275E4F5000540F50 /* durban-spot.swift */; };
 		E5BA7FFF275E510F00540F50 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA7FFE275E510F00540F50 /* MapView.swift */; };
-		E5BA8004275E5DB400540F50 /* surfSpotsData.json in Resources */ = {isa = PBXBuildFile; fileRef = E5BA8003275E5DB400540F50 /* surfSpotsData.json */; };
-		E5BA8006275E693400540F50 /* whiteSandsBeach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5BA8005275E693400540F50 /* whiteSandsBeach.jpg */; };
-		E5BA8008275E69FF00540F50 /* addington.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5BA8007275E69FF00540F50 /* addington.jpg */; };
-		E5BA800A275E6A2100540F50 /* supertubos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5BA8009275E6A2100540F50 /* supertubos.jpg */; };
-		E5BA800C275E6A4000540F50 /* hellsMouth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5BA800B275E6A4000540F50 /* hellsMouth.jpg */; };
 		E5C663A8275E46B600E79970 /* SurfSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663A7275E46B600E79970 /* SurfSwiftApp.swift */; };
 		E5C663AA275E46B600E79970 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C663A9275E46B600E79970 /* ContentView.swift */; };
 		E5C663AC275E46BC00E79970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C663AB275E46BC00E79970 /* Assets.xcassets */; };
@@ -55,11 +50,6 @@
 		E56A79C3275F783A00E9ADF2 /* SurfSpotDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfSpotDetails.swift; sourceTree = "<group>"; };
 		E5BA7FFC275E4F5000540F50 /* durban-spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "durban-spot.swift"; sourceTree = "<group>"; };
 		E5BA7FFE275E510F00540F50 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		E5BA8003275E5DB400540F50 /* surfSpotsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = surfSpotsData.json; sourceTree = "<group>"; };
-		E5BA8005275E693400540F50 /* whiteSandsBeach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = whiteSandsBeach.jpg; sourceTree = "<group>"; };
-		E5BA8007275E69FF00540F50 /* addington.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = addington.jpg; sourceTree = "<group>"; };
-		E5BA8009275E6A2100540F50 /* supertubos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = supertubos.jpg; sourceTree = "<group>"; };
-		E5BA800B275E6A4000540F50 /* hellsMouth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hellsMouth.jpg; sourceTree = "<group>"; };
 		E5C663A4275E46B600E79970 /* SurfSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C663A7275E46B600E79970 /* SurfSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfSwiftApp.swift; sourceTree = "<group>"; };
 		E5C663A9275E46B600E79970 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,21 +114,8 @@
 		E5BA8002275E5CDE00540F50 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				E5BA800D275E6BD400540F50 /* images */,
-				E5BA8003275E5DB400540F50 /* surfSpotsData.json */,
 			);
 			path = resources;
-			sourceTree = "<group>";
-		};
-		E5BA800D275E6BD400540F50 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				E5BA8005275E693400540F50 /* whiteSandsBeach.jpg */,
-				E5BA8009275E6A2100540F50 /* supertubos.jpg */,
-				E5BA8007275E69FF00540F50 /* addington.jpg */,
-				E5BA800B275E6A4000540F50 /* hellsMouth.jpg */,
-			);
-			path = images;
 			sourceTree = "<group>";
 		};
 		E5C6639B275E46B600E79970 = {
@@ -305,13 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5BA800C275E6A4000540F50 /* hellsMouth.jpg in Resources */,
 				E5C663AF275E46BC00E79970 /* Preview Assets.xcassets in Resources */,
-				E5BA800A275E6A2100540F50 /* supertubos.jpg in Resources */,
 				E5C663AC275E46BC00E79970 /* Assets.xcassets in Resources */,
-				E5BA8008275E69FF00540F50 /* addington.jpg in Resources */,
-				E5BA8004275E5DB400540F50 /* surfSpotsData.json in Resources */,
-				E5BA8006275E693400540F50 /* whiteSandsBeach.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

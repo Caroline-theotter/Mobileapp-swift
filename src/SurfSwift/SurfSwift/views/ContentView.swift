@@ -11,23 +11,19 @@ import Foundation
 
 struct ContentView: View {
     
-    @State var results = Records(spots: [])
-    //    @Environment(\.managedObjectContext) private var viewContext
-    //
-    //    @FetchRequest(
-    //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-    //        animation: .default)
-    //    private var items: FetchedResults<Item>
-    
-    init(){
-        loadData()
-    }
+   @State var results = Records(spots: [])
+
+//    init(){
+//      loadData()
+//    }
     
     var body: some View {
-        //ContentView()
-        Text("truc")
-        
-        
+        VStack{
+            SurfSpotList(spots: results.spots)
+        }
+        .onAppear {
+            loadData()
+        }
     }
     
     func loadData() {
@@ -35,7 +31,7 @@ struct ContentView: View {
         guard let url = URL(string: "https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=keytJfvmEMHuMhOp7") else {
             print("Invalid URL")
             return
-        }
+            }
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -43,24 +39,21 @@ struct ContentView: View {
                 if let response = try? JSONDecoder().decode(Records.self, from: data) {
                     DispatchQueue.main.async {
                         self.results = response
-                        print(response)
+//                        results = Records(spots: response.spots)
+                        print(self.results)
                     }
                     return
                 }
-                
             }
         }.resume()
-        
     }
-    
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
 
 //    private func addItem() {
 //        withAnimation {

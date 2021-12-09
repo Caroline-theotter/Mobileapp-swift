@@ -3,13 +3,12 @@
 ////  SurfSwift
 ////
 ////  Created by laurie cluzeau on 07/12/2021.
-////
-//
+
 //import Foundation
 //
 //struct DataManager{
 //    
-//    static let data: [surfSpotInfo] = load("surfSpotsData")
+//    static let data: Records = load("Spot")
 //    
 //    
 //    static func load<T: Decodable>(_ filename: String) -> T {
