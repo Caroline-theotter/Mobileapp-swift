@@ -39,7 +39,8 @@ struct SurfSpotDetails: View {
                 
                 Text("About \(surfspot.fields.destination)")
                     .font(.title2)
-//                Text(surfspot.fields.)
+                Text("Difficulty level : \(surfspot.fields.difficultyLevel)")
+                    .font(.subheadline)
                 }
             .padding()
             }
