@@ -14,8 +14,6 @@ struct Records: Codable{
     enum CodingKeys: String, CodingKey {
             case spots = "records"
     }
-//    var fields: Fields
-    
     
 //    private var imageName: String
 //
@@ -45,36 +43,48 @@ struct Spot: Codable{
 struct Fields: Codable{
     var difficultyLevel: Int
     var destination: String
-  //  var stateCountry: String
-//    var photo: PhotoData
+    var stateCountry: String
+    var geocode: String
+    var photo: [PhotoData]
 
     enum CodingKeys: String, CodingKey {
             case difficultyLevel = "Difficulty Level"
             case destination = "Destination"
-
-          //  case stateCountry = "Destination State/Country"
+            case photo = "Photos"
+//            case idPhoto = "id"
+            case stateCountry = "Destination State/Country"
+            case geocode = "Geocode"
         }
     init(from decoder: Decoder) throws {
             let values = try decoder.container(keyedBy: CodingKeys.self)
             difficultyLevel = try values.decode(Int.self, forKey: .difficultyLevel)
             destination = try values.decode(String.self, forKey: .destination)
+            stateCountry = try values.decode(String.self, forKey: .stateCountry)
+            photo = try values.decode([PhotoData].self, forKey: .photo)
+            geocode = try values.decode(String.self, forKey: .geocode)
         print(difficultyLevel)
         print(destination)
-        }
+        print(stateCountry)
+        print(geocode)
+//        print(photo)
+    }
 }
-
-//struct PhotoData: Codable{
-//    var urlPhoto: URL
-//}
-
-//extension SurfPlace {
-//    struct SurfData: Codable {
-//        struct Container: Codable{
-//            var number: Int
-//        }
 //
-//        var records: Container
-//    }
-//}
+struct PhotoData: Codable{
+    var url: String
+    var idPhoto: String
+//
+    enum CodingKeys: String, CodingKey {
+        case idPhoto = "id"
+        case url = "url"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        idPhoto = try values.decode(String.self, forKey: .idPhoto)
+        url = try values.decode(String.self, forKey: .url)
+        print(url)
+    }
+}
 
 
