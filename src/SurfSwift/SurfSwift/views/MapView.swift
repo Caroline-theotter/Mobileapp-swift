@@ -7,32 +7,55 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
-struct MapView: View {
-    var coordinate: CLLocationCoordinate2D
-    @State private var region = MKCoordinateRegion()
+struct SurfMapView: View {
+    var surfspot: Spot
+    @State var location: CLLocationCoordinate2D?
+    @State var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.0, longitude: 2.0), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+
      
     var body: some View {
         Map(coordinateRegion: $region)
             .onAppear {
-                setRegion(coordinate)
+                self.getLocation(from: surfspot.fields.stateCountry) { coordinates in
+                    if coordinates != nil {
+                        self.location = coordinates
+                        self.region = MKCoordinateRegion(center: self.location!, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+                    }
+                    
+                }
        }
     }
+
+func getLocation(from address: String, completion: @escaping (_ location: CLLocationCoordinate2D?)-> Void) {
+       let geocoder = CLGeocoder()
+       geocoder.geocodeAddressString(address) { (placemarks, error) in
+           guard let placemarks = placemarks,
+           let location = placemarks.first?.location?.coordinate else {
+               completion(nil)
+               return
+           }
+           completion(location)
+       }
+   }
+}
+
     
-    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
+//    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
+//
+//            region = MKCoordinateRegion(
+//
+//                center: coordinate,
+//
+//                span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+//            )
+//        }
+//}
 
-            region = MKCoordinateRegion(
-
-                center: coordinate,
-
-                span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-            )
-        }
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView(coordinate: CLLocationCoordinate2D(latitude:-29.858_6804,
-            longitude: 31.021_8404))
-    }
-}
+//struct MapView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MapView(coordinate: CLLocationCoordinate2D(latitude:-29.858_6804,
+//            longitude: 31.021_8404))
+//    }
+//}

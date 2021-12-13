@@ -15,39 +15,15 @@ struct surfSpotRow: View {
            
                 Image(systemName: "durban-spot")
                 .data(url: URL(string: surfspot.fields.photo[0].url)!)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width:50, height: 50)
+                .clipShape(Circle())
+                .frame(width:70, height: 70)
             Text(surfspot.fields.destination)
             Spacer()
         }
     }
 }
 
-//struct ImageRow: View {
-//    let model: Model
-//    var body: some View {
-//        VStack(alignment: .center){
-//            ImageViewContainer(imageURL: model.imageURL)
-//        }
-//    }
-//}
-//
-//struct ImageViewContainer: View {
-//    @ObjectBinding var remoteImageUrl: RemoteImageURL
-//    
-//    init(imageURL: String){
-//        remoteImageURL = RemoteImageURL(imageURL: imageURL)
-//    }
-//    
-//    var body: some View {
-//        Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: "durban-spot") : UIImage(data: remoteImageURL.data)!)
-//            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//            .frame(width:250, height: 250)
-//    }
-//}
-//
+
 
 
 //struct surfSpotRow_Previews: PreviewProvider {

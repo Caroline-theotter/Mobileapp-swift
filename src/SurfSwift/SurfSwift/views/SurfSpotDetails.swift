@@ -13,15 +13,18 @@ struct SurfSpotDetails: View {
     
     var body: some View {
         ScrollView {
-//            MapView(coordinate: surfspot.fields.geocode)
-//                .ignoresSafeArea(edges: .top)
-//                .frame(height: 300)
+            SurfMapView(surfspot: surfspot)
+                .ignoresSafeArea(edges: .top)
+                .frame(height: 300)
 //
           Image(systemName: "durban-spot")
             .data(url: URL(string: surfspot.fields.photo[0].url)!)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width:100, height:100)
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width:350, height:250)
+            .clipShape(Circle())
+            .offset(y: -130)
+            .padding(.bottom, -130)
            
                 
             VStack(alignment: .leading){
