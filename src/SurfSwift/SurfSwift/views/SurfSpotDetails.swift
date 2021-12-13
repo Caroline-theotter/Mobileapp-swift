@@ -6,6 +6,7 @@
 //
 //
 import SwiftUI
+//import URLImage
 
 struct SurfSpotDetails: View {
     var surfspot: Spot
@@ -16,9 +17,12 @@ struct SurfSpotDetails: View {
 //                .ignoresSafeArea(edges: .top)
 //                .frame(height: 300)
 //
-//            durban_spot(image: surfspot.fields.photo.self)
-//                .offset(y:-130)
-//                .padding(.bottom, -130)
+          Image(systemName: "durban-spot")
+            .data(url: URL(string: surfspot.fields.photo[0].url)!)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width:100, height:100)
+           
                 
             VStack(alignment: .leading){
                 Text(surfspot.fields.destination)

@@ -12,12 +12,18 @@ import Foundation
 struct ContentView: View {
     
    @State var results = Records(spots: [])
+    
 
 //    init(){
 //      loadData()
 //    }
     
     var body: some View {
+//        HStack{
+//            Image(systemName: "durban-spot")
+//                .data(url: URL(string: results.fields.photo)!)
+//        }
+
         VStack{
             SurfSpotList(spots: results.spots)
         }
@@ -48,6 +54,19 @@ struct ContentView: View {
         }.resume()
     }
 }
+
+extension Image {
+
+    func data(url:URL) -> Self {
+        if let data = try? Data(contentsOf: url) {
+            return Image(uiImage: UIImage(data: data)!)
+                .resizable()
+        }
+        return self
+            .resizable()
+    }
+}
+
 
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {

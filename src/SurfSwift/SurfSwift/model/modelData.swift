@@ -2,34 +2,29 @@
 ////  modelData.swift
 ////  SurfSwift
 ////
-////  Created by laurie cluzeau on 07/12/2021.
-
+//////  Created by laurie cluzeau on 07/12/2021.
+//
 //import Foundation
+//import SwiftUI
+//import Combine
 //
-//struct DataManager{
+//class FetchImageURL: BindableObject {
+//    var didChange = PassthroughSubject<Data, Never>()
 //    
-//    static let data: Records = load("Spot")
-//    
-//    
-//    static func load<T: Decodable>(_ filename: String) -> T {
-//        let data: Data
-//
-//        guard let file = Bundle.main.url(forResource: filename, withExtension: "json")
-//        else {
-//            fatalError("Couldn't find \(filename) in main bundle.")
-//        }
-//
-//        do {
-//            data = try Data(contentsOf: file)
-//        } catch {
-//            fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-//        }
-//
-//        do {
-//            let decoder = JSONDecoder()
-//            return try decoder.decode(T.self, from: data)
-//        } catch {
-//            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+//    var data = Data() {
+//        didSet {
+//            didChange.send(data)
 //        }
 //    }
+//    
+//    init(imageURL: String) {
+//        guard let url = URL(string: imageURL) else { return }
+//        URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            guard let data = data else { return }
+//            DispachQueue.main.async {
+//                self.data = data
+//            }
+//        }.resume()
+//    }
 //}
+
