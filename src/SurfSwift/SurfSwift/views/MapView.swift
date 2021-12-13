@@ -13,8 +13,8 @@ struct SurfMapView: View {
     var surfspot: Spot
     @State var location: CLLocationCoordinate2D?
     @State var region: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.0, longitude: 2.0), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
-
-     
+    
+    
     var body: some View {
         Map(coordinateRegion: $region)
             .onAppear {
@@ -23,35 +23,22 @@ struct SurfMapView: View {
                         self.location = coordinates
                         self.region = MKCoordinateRegion(center: self.location!, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
                     }
-                    
                 }
-       }
+            }
     }
-
-func getLocation(from address: String, completion: @escaping (_ location: CLLocationCoordinate2D?)-> Void) {
-       let geocoder = CLGeocoder()
-       geocoder.geocodeAddressString(address) { (placemarks, error) in
-           guard let placemarks = placemarks,
-           let location = placemarks.first?.location?.coordinate else {
-               completion(nil)
-               return
-           }
-           completion(location)
-       }
-   }
-}
-
     
-//    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
-//
-//            region = MKCoordinateRegion(
-//
-//                center: coordinate,
-//
-//                span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-//            )
-//        }
-//}
+    func getLocation(from address: String, completion: @escaping (_ location: CLLocationCoordinate2D?)-> Void) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            guard let placemarks = placemarks,
+                  let location = placemarks.first?.location?.coordinate else {
+                      completion(nil)
+                      return
+                  }
+            completion(location)
+        }
+    }
+}
 
 //struct MapView_Previews: PreviewProvider {
 //    static var previews: some View {

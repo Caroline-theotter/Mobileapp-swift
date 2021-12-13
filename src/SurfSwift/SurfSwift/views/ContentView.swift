@@ -11,19 +11,19 @@ import Foundation
 
 struct ContentView: View {
     
-   @State var results = Records(spots: [])
+    @State var results = Records(spots: [])
     
-
-//    init(){
-//      loadData()
-//    }
+    
+    //    init(){
+    //      loadData()
+    //    }
     
     var body: some View {
-//        HStack{
-//            Image(systemName: "durban-spot")
-//                .data(url: URL(string: results.fields.photo)!)
-//        }
-
+        //        HStack{
+        //            Image(systemName: "durban-spot")
+        //                .data(url: URL(string: results.fields.photo)!)
+        //        }
+        
         VStack{
             SurfSpotList(spots: results.spots)
         }
@@ -37,7 +37,7 @@ struct ContentView: View {
         guard let url = URL(string: "https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=keytJfvmEMHuMhOp7") else {
             print("Invalid URL")
             return
-            }
+        }
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -45,7 +45,7 @@ struct ContentView: View {
                 if let response = try? JSONDecoder().decode(Records.self, from: data) {
                     DispatchQueue.main.async {
                         self.results = response
-//                        results = Records(spots: response.spots)
+                        //                        results = Records(spots: response.spots)
                         print(self.results)
                     }
                     return
@@ -56,7 +56,7 @@ struct ContentView: View {
 }
 
 extension Image {
-
+    
     func data(url:URL) -> Self {
         if let data = try? Data(contentsOf: url) {
             return Image(uiImage: UIImage(data: data)!)

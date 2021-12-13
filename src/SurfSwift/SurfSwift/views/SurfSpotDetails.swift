@@ -16,28 +16,27 @@ struct SurfSpotDetails: View {
             SurfMapView(surfspot: surfspot)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
-//
-          Image(systemName: "durban-spot")
-            .data(url: URL(string: surfspot.fields.photo[0].url)!)
+            //
+            Image(systemName: "durban-spot")
+                .data(url: URL(string: surfspot.fields.photo[0].url)!)
                 .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width:350, height:250)
-            .clipShape(Circle())
-            .offset(y: -130)
-            .padding(.bottom, -130)
-           
-                
+                .frame(height:150)
+                .clipShape(Circle())
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            
+            
             VStack(alignment: .leading){
                 Text(surfspot.fields.destination)
                     .font(.title)
                     .foregroundColor(Color.blue)
                     .multilineTextAlignment(.center)
-            
+                
                 HStack {
-//                    Text(surfspot.fields.difficultyLevel)
+                    //                    Text(surfspot.fields.difficultyLevel)
                     Spacer()
                     Text(surfspot.fields.stateCountry)
-                    }
+                }
                 
                 .font(.subheadline)
                 .foregroundColor(.secondary)
@@ -48,13 +47,13 @@ struct SurfSpotDetails: View {
                     .font(.title2)
                 Text("Difficulty level : \(surfspot.fields.difficultyLevel)")
                     .font(.subheadline)
-                }
-            .padding()
             }
+            .padding()
+        }
         .navigationTitle(surfspot.fields.destination)
         .navigationBarTitleDisplayMode(.inline)
-        }
     }
+}
 
 
 //
