@@ -26,7 +26,6 @@ struct Fields: Codable{
     var difficultyLevel: Int
     var destination: String
     var stateCountry: String
-    var geocode: String
     var photo: [PhotoData]
 
     enum CodingKeys: String, CodingKey {
@@ -34,7 +33,6 @@ struct Fields: Codable{
             case destination = "Destination"
             case photo = "Photos"
             case stateCountry = "Destination State/Country"
-            case geocode = "Geocode"
         }
 }
 

@@ -41,7 +41,7 @@ struct ContentView: View {
             print("Invalid URL")
             return
         }
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
@@ -55,8 +55,22 @@ struct ContentView: View {
                 }
             }
         }.resume()
+        
+        // Serialize HTTP Body data as JSON
+        let body = ["user_id": "12"]
+        let bodyData = try? JSONSerialization.data(
+            withJSONObject: body,
+            options: []
+        )
+
+        // Change the URLRequest to a POST request
+        request.httpMethod = "POST"
+        request.httpBody = bodyData
+        
     }
 }
+
+
 
 extension Image {
     
@@ -70,16 +84,38 @@ extension Image {
     }
 }
 
-//struct SpotsView: View {
-//    var body: some View {
-//        Color.red
-//    }
-//}
+
+
+
 struct EditView: View {
+    @State var destination: String = ""
+    @State var difficultyLevel: Int = 0
+    @State var stateCountry: String = ""
+    @State var photo: String = ""
+//
+//    func onSubmit(of triggers: SubmitTriggers = .text, _ action: @escaping (() -> Void)) -> some View
+    
     var body: some View {
-        Color.blue
+        NavigationView{
+            Form{
+                TextField("Spot name", text: $destination)
+                TextField("Difficulty level",value: $difficultyLevel, format: .number)
+                TextField("State/Country", text: $stateCountry)
+                TextField("Photo url", text: $photo)
+//                    .onSubmit {
+//                            guard SurfSpotList.isEmpty == false() else{ return }
+//                            SurfSpotList(spots: results.spots)
+//                        }
+                    .submitLabel(.send)
+//                Button(action: ) {
+//                    Text("Add new spot")
+                }
+            }
+            .navigationBarTitle("New spot")
+        }
+//        Color.blue
     }
-}
+
 
 
 //struct ContentView_Previews: PreviewProvider {
@@ -88,50 +124,3 @@ struct EditView: View {
 //    }
 //}
 
-//    private func addItem() {
-//        withAnimation {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-//
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { items[$0] }.forEach(viewContext.delete)
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-//}
-//
-//private let itemFormatter: DateFormatter = {
-//    let formatter = DateFormatter()
-//    formatter.dateStyle = .short
-//    formatter.timeStyle = .medium
-//    return formatter
-//}()
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            ContentView().preferredColorScheme(.light).previewInterfaceOrientation(.portrait).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//            ContentView().preferredColorScheme(.light).previewInterfaceOrientation(.portrait).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//        }
-//    }
-//}
