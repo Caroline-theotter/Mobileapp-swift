@@ -13,20 +13,23 @@ struct ContentView: View {
     
     @State var results = Records(spots: [])
     
-    
-    //    init(){
-    //      loadData()
-    //    }
-    
     var body: some View {
-        //        HStack{
-        //            Image(systemName: "durban-spot")
-        //                .data(url: URL(string: results.fields.photo)!)
-        //        }
-        
-        VStack{
+        TabView {
             SurfSpotList(spots: results.spots)
+//           SpotsView()
+                .tabItem {
+                    Image("surf")
+                    Text("Spots")
+                }
+           EditView()
+                .tabItem {
+                    Image("edit")
+                    Text("Add new surf spot")
+                }
         }
+//        VStack{
+//            SurfSpotList(spots: results.spots)
+//        }
         .onAppear {
             loadData()
         }
@@ -64,6 +67,17 @@ extension Image {
         }
         return self
             .resizable()
+    }
+}
+
+//struct SpotsView: View {
+//    var body: some View {
+//        Color.red
+//    }
+//}
+struct EditView: View {
+    var body: some View {
+        Color.blue
     }
 }
 

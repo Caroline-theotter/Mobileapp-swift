@@ -16,7 +16,7 @@ struct SurfSpotDetails: View {
             SurfMapView(surfspot: surfspot)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
-            //
+            
             Image(systemName: "durban-spot")
                 .data(url: URL(string: surfspot.fields.photo[0].url)!)
                 .resizable()
@@ -33,7 +33,6 @@ struct SurfSpotDetails: View {
                     .multilineTextAlignment(.center)
                 
                 HStack {
-                    //                    Text(surfspot.fields.difficultyLevel)
                     Spacer()
                     Text(surfspot.fields.stateCountry)
                 }
@@ -45,8 +44,7 @@ struct SurfSpotDetails: View {
                 
                 Text("About \(surfspot.fields.destination)")
                     .font(.title2)
-                Text("Difficulty level : \(surfspot.fields.difficultyLevel)")
-                    .font(.subheadline)
+                StarsView(rating: CGFloat(surfspot.fields.difficultyLevel), maxRating: 5)
             }
             .padding()
         }
@@ -55,8 +53,31 @@ struct SurfSpotDetails: View {
     }
 }
 
+struct StarsView: View {
+    var rating: CGFloat
+    var maxRating: Int
+    var body: some View {
+        let stars = HStack(spacing: 0) {
+            ForEach(0..<maxRating) { _ in
+                Image("star")
+            }
+        }
 
-//
+        stars.overlay(
+            GeometryReader { g in
+                let width = rating / CGFloat(maxRating) * g.size.width
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .frame(width: width)
+                        .foregroundColor(.yellow)
+                }
+            }
+            .mask(stars)
+        )
+        .foregroundColor(.gray)
+    }
+}
+
 //struct SurfSpotDetails_Previews: PreviewProvider {
 //    static var previews: some View {
 //        SurfSpotDetails(surfspot: DataManager.data[0])

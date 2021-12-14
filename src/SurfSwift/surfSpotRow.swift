@@ -12,7 +12,6 @@ struct surfSpotRow: View {
     
     var body: some View {
         HStack{
-            
             Image(systemName: "durban-spot")
                 .data(url: URL(string: surfspot.fields.photo[0].url)!)
                 .clipShape(Circle())
