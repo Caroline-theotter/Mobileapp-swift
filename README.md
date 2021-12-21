@@ -1,5 +1,7 @@
-# Projet_Collectif_Template
+# Surf spot mobile app on swift
 
-Ce dépôt Git vous sert de base de travail pour les projets collectifs : en cliquant sur le lien fourni par l'encadrante, celui-ci sera automatiquement copié dans la dépôt que vous créerez pour ce projet.
+School project
 
-Il ne vous reste plus qu'à vous lancer sur le projet collectif, et à mettre à jour le dépôt au fil de l'eau !
+Create a mobile app on swift. 
+List of surf spots with the details view for each one.
+And with the possibility to add your own surf spot (in progress).
